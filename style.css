@@ -1,0 +1,60 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc0cb;
+    /* Light pink background */
+}
+
+.container {
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    background-color: #ff69b4;
+    /* Hot pink */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#yesBtn {
+    color: white;
+    background-color: #32cd32;
+    /* Lime Green */
+}
+
+#yesBtn:hover {
+    background-color: #228b22;
+    /* Forest Green */
+}
+
+#noBtn {
+    color: white;
+    background-color: #ff6347;
+    /* Tomato */
+}
+
+#noBtn:hover {
+    background-color: #b22222;
+    /* Firebrick */
+}
