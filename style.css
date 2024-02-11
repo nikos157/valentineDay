@@ -7,7 +7,11 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #ffc0cb;
+    overflow: hidden;
     /* Light pink background */
+    width: 100vw;
+    max-height: 100vh;
+    position: fixed;
 }
 
 .container {
@@ -20,7 +24,7 @@ h2 {
     /* Hot pink */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .button-container {
@@ -57,4 +61,96 @@ button {
 #noBtn:hover {
     background-color: #b22222;
     /* Firebrick */
+}
+
+@keyframes fall {
+    0% {
+        top: -95px;
+        /* Start just above the viewport */
+        opacity: 0.7;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    100% {
+        top: 100%;
+        /* End at the bottom of the viewport */
+        opacity: 0;
+    }
+}
+
+@keyframes falle {
+    0% {
+        top: -200px;
+        /* Start just above the viewport */
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100vh;
+        /* End at the bottom of the viewport */
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+
+    margin-top: 10px;
+    animation: fall ease-in forwards;
+    transform: rotate(30deg);
+    transition: transform 0.5s ease;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.8));
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+}
+
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+
+.emoji {
+    position: absolute;
+    font-size: 90px;
+    margin: 10px;
+    padding: 0;
+    animation: falle ease-in forwards;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.8));
+}
+
+.toast {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-size: 35px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(20px);
+    border-radius: 4px;
+    text-align: center;
+    min-width: 200px;
 }
